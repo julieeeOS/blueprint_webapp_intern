@@ -9,12 +9,24 @@
         "php": ">=8.5.9",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/doctrine-bundle": "^3.3",
+        "doctrine/doctrine-migrations-bundle": "^4.0",
+        "doctrine/orm": "^3.6",
+        "knplabs/knp-paginator-bundle": "^6.10",
+        "stof/doctrine-extensions-bundle": "^1.15",
+        "symfony/asset": "8.1.*",
+        "symfony/asset-mapper": "8.1.*",
         "symfony/console": "8.1.*",
         "symfony/dotenv": "8.1.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "8.1.*",
         "symfony/runtime": "8.1.*",
-        "symfony/yaml": "8.1.*"
+        "symfony/translation": "8.1.*",
+        "symfony/twig-bundle": "8.1.*",
+        "symfony/yaml": "8.1.*",
+        "twig/extra-bundle": "^3.24",
+        "twig/intl-extra": "^3.26",
+        "twig/twig": "^2.12|^3.0"
     },
     "config": {
         "allow-plugins": {
@@ -50,13 +62,28 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "importmap:install": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "static-analysis": [
+        "./vendor/bin/phpcs --config-set installed_paths $(realpath vendor/escapestudios/symfony2-coding-standard)",
+        "./vendor/bin/phpcs --config-set default_standard Symfony",
+        "./vendor/bin/phpcs --standard=Symfony src/ --ignore=Kernel.php",
+        "./vendor/bin/phpcs --standard=Symfony tests/  --ignore=object-mapper.php",
+        "./vendor/bin/php-cs-fixer fix src/ --rules=@Symfony,@PSR1,@PSR2,@PSR12",
+        "./vendor/bin/php-cs-fixer fix tests/ --rules=@Symfony,@PSR1,@PSR2,@PSR12",
+        "./vendor/bin/rector process src",
+        "./vendor/bin/rector process tests"
+      ],
+        "init-app" : [
+            "./bin/console --no-interaction doctrine:migrations:migrate",
+            "./bin/console --no-interaction doctrine:fixtures:load"
         ]
     },
     "conflict": {
@@ -68,5 +95,14 @@
             "require": "8.1.*",
             "docker": true
         }
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^4.3",
+        "escapestudios/symfony2-coding-standard": "^3.18",
+        "fakerphp/faker": "^1.24",
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "rector/rector": "^2.6",
+        "squizlabs/php_codesniffer": "^4.0",
+        "symfony/maker-bundle": "^1.67"
     }
 }

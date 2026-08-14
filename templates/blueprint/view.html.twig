@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    View blueprint
+{% endblock %}
+
+{% block body %}
+    <h1>View Blueprint</h1>
+    {% if blueprint is defined and blueprint|length %}
+        <dl>
+            <dt>Name</dt>
+            <dd>{{ blueprint.name }}</dd>
+            <dt>Version</dt>
+            <dd>{{ blueprint.version }}</dd>
+            <dt>Manifest</dt>
+            <dd>{{ blueprint.manifest }}</dd>
+            <dt>Size</dt>
+            <dd>{{ blueprint.filesize }}</dd>
+            <dt>Release Date</dt>
+            <dd>{{ blueprint.releaseDate|format_datetime() }}</dd>
+            <dt>Comment</dt>
+            <dd>{{ blueprint.comment }}</dd>
+            <dt>Download link</dt>
+            <dd>{{ blueprint.download }}</dd>
+            
+        </dl>
+    {% else %}
+        <p>
+            Blueprint not found.
+        </p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blueprint{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Blueprint</h1>
+    {% if pagination is defined and pagination.items|length %}
+        <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>{{ knp_pagination_sortable(pagination, 'Name', 'blueprint.name') }}</th>
+            <th>{{ knp_pagination_sortable(pagination, 'Version', 'blueprint.version' )}}</th>
+            <th>Manifest</th>
+            <th>{{ knp_pagination_sortable(pagination, 'Size', 'blueprint.filesize') }}</th>
+            <th>{{ knp_pagination_sortable(pagination, 'Release Date', 'blueprint.releaseDate') }}</th>
+            <th>Comment</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for blueprint in pagination.items %}
+        <tr>
+            <td>{{ blueprint.name }}</td>
+            <td>{{ blueprint.version }}</td>
+            <td>{{ blueprint.manifest }}</td>
+            <td>{{ blueprint.filesize }}</td>
+            <td>{{ blueprint.releaseDate|format_datetime() }}</td>
+            <td>{{ blueprint.comment }}</td>
+            <td>
+            <a href={{ blueprint.download }} title = "Download Blueprint">
+            Download
+            </a>
+            </td>
+            <td>
+                <a href="{{ url('blueprint_view', {id: blueprint.id}) }}" title="View blueprint">
+                View
+                </a>
+             </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    {# page navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+    <div class="count">
+        {{ pagination.getTotalItemCount }}
+    </div>
+
+    {% else %}
+        <p>
+            List is empty.
+        </p>
+    {% endif %}
+
+</div>
+
+
+{% endblock %}

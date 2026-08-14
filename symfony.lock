@@ -1,4 +1,118 @@
 {
+    "doctrine/deprecations": {
+        "version": "1.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "fdd756167454623e21f1d769c5b814b243782a67"
+        }
+    },
+    "doctrine/doctrine-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "d39a3bd844edfe90c20ae520b804a3bf4f82b4ad"
+        },
+        "files": [
+            "config/packages/doctrine.yaml",
+            "src/Entity/.gitignore",
+            "src/Repository/.gitignore"
+        ]
+    },
+    "doctrine/doctrine-fixtures-bundle": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "1f5514cfa15b947298df4d771e694e578d4c204d"
+        },
+        "files": [
+            "src/DataFixtures/AppFixtures.php"
+        ]
+    },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "4.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.1",
+            "ref": "1d01ec03c6ecbd67c3375c5478c9a423ae5d6a33"
+        },
+        "files": [
+            "config/packages/doctrine_migrations.yaml",
+            "migrations/.gitignore"
+        ]
+    },
+    "friendsofphp/php-cs-fixer": {
+        "version": "3.95",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.39",
+            "ref": "97aaf9026490db73b86c23d49e5774bc89d2b232"
+        },
+        "files": [
+            ".php-cs-fixer.dist.php"
+        ]
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v6.10.0"
+    },
+    "phpstan/phpstan": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "5e490cc197fb6bb1ae22e5abbc531ddc633b6767"
+        },
+        "files": [
+            "phpstan.dist.neon"
+        ]
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "4.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "3.6",
+            "ref": "3868461a63d8cc781a00c008baea09b6594871a6"
+        },
+        "files": [
+            "phpcs.xml.dist"
+        ]
+    },
+    "stof/doctrine-extensions-bundle": {
+        "version": "1.15",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.2",
+            "ref": "e805aba9eff5372e2d149a9ff56566769e22819d"
+        },
+        "files": [
+            "config/packages/stof_doctrine_extensions.yaml"
+        ]
+    },
+    "symfony/asset-mapper": {
+        "version": "8.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.4",
+            "ref": "c01c47af2ec66a74ec046eccb919cfe27d3464ec"
+        },
+        "files": [
+            "assets/app.js",
+            "assets/styles/app.css",
+            "config/packages/asset_mapper.yaml",
+            "importmap.php"
+        ]
+    },
     "symfony/console": {
         "version": "8.1",
         "recipe": {
@@ -44,6 +158,15 @@
             ".editorconfig"
         ]
     },
+    "symfony/maker-bundle": {
+        "version": "1.67",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
+    },
     "symfony/routing": {
         "version": "8.1",
         "recipe": {
@@ -56,5 +179,34 @@
             "config/packages/routing.yaml",
             "config/routes.yaml"
         ]
+    },
+    "symfony/translation": {
+        "version": "8.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.3",
+            "ref": "620a1b84865ceb2ba304c8f8bf2a185fbf32a843"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/.gitignore"
+        ]
+    },
+    "symfony/twig-bundle": {
+        "version": "8.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.4",
+            "ref": "06dacf16872358cb1f2494e089070ff2d045233a"
+        },
+        "files": [
+            "config/packages/twig.yaml",
+            "templates/base.html.twig"
+        ]
+    },
+    "twig/extra-bundle": {
+        "version": "v3.24.0"
     }
 }
