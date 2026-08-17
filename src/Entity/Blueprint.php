@@ -53,6 +53,7 @@ class Blueprint
      * Release Date.
      */
     #[ORM\Column]
+    #[Gedmo\Timestampable(on: 'create')]
     private ?\DateTime $releaseDate = null;
 
     /**
@@ -69,6 +70,10 @@ class Blueprint
 
     #[ORM\ManyToOne]
     private ?Device $device = null;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Gedmo\Slug(fields: ['name'])]
+    private ?string $slug = null;
     
     /**
      * getId
@@ -249,6 +254,18 @@ class Blueprint
     public function setDevice(?Device $device): static
     {
         $this->device = $device;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
 
         return $this;
     }

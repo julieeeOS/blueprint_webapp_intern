@@ -35,7 +35,6 @@ class AppFixtures extends Fixture
             $blueprint->setVersion('1.0.'.(10-$i));
             $blueprint->setManifest($this->faker->sentence);
             $blueprint->setFilesize(mt_rand(100, 400));
-            $blueprint->setReleaseDate($this->faker->dateTimeBetween('-100 days','-1 days'));
             $blueprint->setComment($this->faker->sentence);
             $blueprint->setDownload('localhost/testlink');
             $manager->persist($blueprint);

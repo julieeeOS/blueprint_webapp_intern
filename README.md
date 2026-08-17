@@ -8,6 +8,7 @@ Based on [Symfony Docker ](https://github.com/dunglas/symfony-docker). Written a
 4. Open `https://localhost`
 5. Run `docker compose down --remove-orphans` to stop the Docker containers.
 
+
 The app is currently incomplete. 
 #### Current capabilities:
 - Running database, to connect from outside check which port in Docker Desktop it's being redirected from (**62685**:5432). Name of database is app, user is app and password is !ChangeMe!. This is due to a misconfiguration and the database would need to be reconfigured which should be relatively simple.

@@ -1,3 +1,90 @@
-body {
-    background-color: skyblue;
+/* <weight>: Use a value from 100 to 900 */
+/* <uniquifier>: Use a unique and descriptive class name */
+.noto-sans-display-font {
+  font-family: "Noto Sans Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
+
+/* <weight>: Use a value from 100 to 900 */
+/* <uniquifier>: Use a unique and descriptive class name */
+.noto-sans-font {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/* GENERAL STYLING */
+
+html {
+    font-size: 16px;
+}
+body {
+    background-color: #13162E;
+    font-family: 'Noto Sans';
+    color: white;
+}
+
+.wrapper { 
+    margin: 1em auto; 
+    max-width: 600px; 
+    width: 95%; 
+    font-size: 1rem; 
+}
+
+.table {
+    font-size: 0.8rem;
+    border: solid 1px #283054;
+}
+
+.table-head {
+    background-color: #435678;
+}
+
+/* table body */
+.table-body {
+    font-family: 'Courier New', monospace;
+}
+
+
+
+.navigation {
+    font-size: 1rem;
+    width: 20%;
+    text-align: center;
+    float: right;
+}
+
+.count {
+    font-size: 0.7rem;
+    float: left;
+}
+
+/* LINK STYLING */
+
+/* unvisited link */
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: purple;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: pink;
+}
+
